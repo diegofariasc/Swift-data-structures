@@ -32,23 +32,27 @@ public class Stack {
     // Methods 
 
     // Constructor
-    init() {
+    init() 
+    {
         head = nil
         length = 0
     } // End init
 
     
     // Push method
-    public func push ( _ object : Any ) {
+    public func push ( _ object : Any ) 
+    {
         
         // Create new node
         let newNode = StackNode( object )
 
         // Check if stack is empty 
-        if ( isEmpty ){
+        if ( isEmpty )
+        {
             head = newNode
         } // End if
-        else {
+        else 
+        {
             newNode.next = head
             head = newNode
         } // End else
@@ -59,25 +63,30 @@ public class Stack {
 
 
     // Peek method
-    public func peek() -> Any? {
+    public func peek() -> Any? 
+    {
         
-        if ( isEmpty ) {
+        if ( isEmpty ) 
+        {
             return nil
         } // End if
-        else {
+        else 
+        {
             return head!.payload
         } // End else
 
     } // End peek
 
     // Pop method 
-    public func pop() -> Any? {
+    public func pop() -> Any? 
+    {
 
         // Store value to pop out
         var poppedValue : Any? = nil
 
         // Move pointers if not empty
-        if ( !isEmpty ) {
+        if ( !isEmpty ) 
+        {
             poppedValue = head!.payload
             head = head?.next
             length -= 1
@@ -105,7 +114,8 @@ fileprivate class StackNode {
     // Methods
 
     // Constructor
-    init( _ payload : Any ) {
+    init( _ payload : Any ) 
+    {
         self.payload = payload
         self.next = nil
     } // End init
